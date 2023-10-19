@@ -10,15 +10,18 @@ export default function Registration() {
     qualification: "",
   });
 
+  const [isChecked, setIsChecked] = useState(false);
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+    setIsChecked(event.target.checked);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     alert(
-      `The new shop is called: ${formData.name}, Additional Information: ${formData.description}`
+      `Employee Registered! First Name: ${formData.firstname}, Last Name: ${formData.lastname}, Email Id: ${formData.emailid}, Mobile Number: ${formData.mobilenumber}, Qualification: ${formData.qualification}.`
     );
   };
 
@@ -91,14 +94,74 @@ export default function Registration() {
             <label className="registration__label">
                 Qualification
             </label>
-            <input
-                type="text"
-                id="mobilenumber"
-                className="registration__input"
-                name="mobilenumber"
-                value={formData.mobilenumber}
-                onChange={handleChange}
-            />
+            <div className="registration__options__container">
+
+                <label className="registration__checkbox__text">
+                    <input
+                    className="registration__checkbox__input"
+                    id="qualification"
+                    type="checkbox"
+                    name="highschool"
+                    checked={isChecked}
+                    value={formData.qualification}
+                    onChange={handleChange}
+                    />
+                    High School(10th)
+                </label>
+                <br></br>
+                <label className="registration__checkbox__text">
+                    <input
+                    className="registration__checkbox__input"
+                    id="qualification"
+                    type="checkbox"
+                    name="higher school"
+                    checked={isChecked}
+                    value={formData.qualification}
+                    onChange={handleChange}
+                    />
+                    Higher School(12th)
+                </label>
+                <br></br>
+                <label className="registration__checkbox__text">
+                    <input
+                    className="registration__checkbox__input"
+                    id="qualification"
+                    type="checkbox"
+                    name="bachelors"
+                    checked={isChecked}
+                    value={formData.qualification}
+                    onChange={handleChange}
+                    />
+                    Graduation(bachelors)
+                </label>
+                <br></br>
+                <label className="registration__checkbox__text">
+                    <input
+                    className="registration__checkbox__input"
+                    id="qualification"
+                    type="checkbox"
+                    name="masters"
+                    checked={isChecked}
+                    value={formData.qualification}
+                    onChange={handleChange}
+                    />
+                    Post Graduation(Masters)
+                </label>
+                <br></br>
+                <label className="registration__checkbox__text">
+                    <input
+                    className="registration__checkbox__input"
+                    id="qualification"
+                    type="checkbox"
+                    name="other"
+                    checked={isChecked}
+                    value={formData.qualification}
+                    onChange={handleChange}
+                    />
+                    Other
+                </label>
+
+            </div>
         </div>
 
         <button className="registration__button__submit" type="submit">
