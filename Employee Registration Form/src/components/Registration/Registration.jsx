@@ -36,7 +36,7 @@ export default function Registration() {
     //if (document.getElementById("qualification5").checked) { qualificationList +  document.getElementById("qualification5").name + ", "};
     //qualificationList.concat(" ", "}");
     alert(
-      `Employee Registered! First Name: ${formData.firstname}, Last Name: ${formData.lastname}, Email Id: ${formData.emailid}, Mobile Number: ${formData.mobilenumber}, Qualification(s): ${qualificationList}.`
+      `Employee Registered! First Name: ${formData.firstname}, Last Name: ${formData.lastname}, Email Id: ${formData.emailid}, Mobile Number: ${formData.mobilenumber}, Qualification(s): ${formData.qualification}.`
     );
   };
 
