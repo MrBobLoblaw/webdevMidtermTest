@@ -10,18 +10,33 @@ export default function Registration() {
     qualification: "",
   });
 
-  const [isChecked, setIsChecked] = useState(false);
+  //const [is1Checked, setIs1Checked] = useState(false);
+  //const [is2Checked, setIs2Checked] = useState(false);
+  //const [is3Checked, setIs3Checked] = useState(false);
+  //const [is4Checked, setIs4Checked] = useState(false);
+  //const [is5Checked, setIs5Checked] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
-    setIsChecked(event.target.checked);
+    //setIs1Checked(event.target.checked);
+    //setIs2Checked(event.target.checked);
+    //setIs3Checked(event.target.checked);
+    //setIs4Checked(event.target.checked);
+    //setIs5Checked(event.target.checked);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    //var qualificationList = "{ ";
+    //if (document.getElementById("qualification1").checked) { qualificationList.concat(document.getElementById("qualification1").name, ", ")};
+    //if (document.getElementById("qualification2").checked) { qualificationList +  document.getElementById("qualification2").name + ", "};
+    //if (document.getElementById("qualification3").checked) { qualificationList +  document.getElementById("qualification3").name + ", "};
+    //if (document.getElementById("qualification4").checked) { qualificationList +  document.getElementById("qualification4").name + ", "};
+    //if (document.getElementById("qualification5").checked) { qualificationList +  document.getElementById("qualification5").name + ", "};
+    //qualificationList.concat(" ", "}");
     alert(
-      `Employee Registered! First Name: ${formData.firstname}, Last Name: ${formData.lastname}, Email Id: ${formData.emailid}, Mobile Number: ${formData.mobilenumber}, Qualification: ${formData.qualification}.`
+      `Employee Registered! First Name: ${formData.firstname}, Last Name: ${formData.lastname}, Email Id: ${formData.emailid}, Mobile Number: ${formData.mobilenumber}, Qualification(s): ${qualificationList}.`
     );
   };
 
@@ -44,6 +59,7 @@ export default function Registration() {
                 id="firstname"
                 className="registration__input"
                 name="firstname"
+                min="5"
                 value={formData.firstname}
                 onChange={handleChange}
             />
@@ -99,10 +115,9 @@ export default function Registration() {
                 <label className="registration__checkbox__text">
                     <input
                     className="registration__checkbox__input"
-                    id="qualification"
+                    id="qualification1"
                     type="checkbox"
                     name="highschool"
-                    checked={isChecked}
                     value={formData.qualification}
                     onChange={handleChange}
                     />
@@ -112,10 +127,9 @@ export default function Registration() {
                 <label className="registration__checkbox__text">
                     <input
                     className="registration__checkbox__input"
-                    id="qualification"
+                    id="qualification2"
                     type="checkbox"
                     name="higher school"
-                    checked={isChecked}
                     value={formData.qualification}
                     onChange={handleChange}
                     />
@@ -125,10 +139,9 @@ export default function Registration() {
                 <label className="registration__checkbox__text">
                     <input
                     className="registration__checkbox__input"
-                    id="qualification"
+                    id="qualification3"
                     type="checkbox"
                     name="bachelors"
-                    checked={isChecked}
                     value={formData.qualification}
                     onChange={handleChange}
                     />
@@ -138,10 +151,9 @@ export default function Registration() {
                 <label className="registration__checkbox__text">
                     <input
                     className="registration__checkbox__input"
-                    id="qualification"
+                    id="qualification4"
                     type="checkbox"
                     name="masters"
-                    checked={isChecked}
                     value={formData.qualification}
                     onChange={handleChange}
                     />
@@ -151,10 +163,9 @@ export default function Registration() {
                 <label className="registration__checkbox__text">
                     <input
                     className="registration__checkbox__input"
-                    id="qualification"
+                    id="qualification5"
                     type="checkbox"
                     name="other"
-                    checked={isChecked}
                     value={formData.qualification}
                     onChange={handleChange}
                     />
@@ -164,12 +175,14 @@ export default function Registration() {
             </div>
         </div>
 
-        <button className="registration__button__submit" type="submit">
-            Submit
-        </button>
-        <button className="registration__button__reset" type="button" onClick={handleReset}>
-            Reset
-        </button>
+        <div className="registration__container6">
+            <button className="registration__button__submit" type="submit">
+                Submit
+            </button>
+            <button className="registration__button__reset" type="button" onClick={handleReset}>
+                Reset
+            </button>
+        </div>
     </form>
   );
 }

@@ -6,7 +6,7 @@
     flex-direction: column;
     gap: 1rem;
     position: absolute;
-    transform: translate(140%, -80%);
+    transform: translate(140%, -200%);
   }
   .registration__input,
   .registration__button,
@@ -55,6 +55,13 @@
     top:300px;
 
   }
+  .registration__container6 {
+
+    position:absolute;
+    top:430px;
+    right: 50px;
+
+  }
   .registration__options__container {
 
     position:relative;
@@ -99,7 +106,7 @@
     display: block;
     width: 5rem;
     position:relative;
-    right:-10px;
+    right:100px;
     padding: 5px 0;
     cursor: pointer;
   }
@@ -107,8 +114,8 @@
     display: block;
     width: 5rem;
     position:relative;
-    top: -50px;
-    right: -260px;
+    top: -32px;
+    right: -150px;
     padding: 5px 0;
     cursor: pointer;
   }
